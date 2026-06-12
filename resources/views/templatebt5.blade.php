@@ -7,40 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-
 <body>
-
     <div class="container">
         <div class="mt-4 p-5 bg-primary text-white rounded">
             <h3>5026241202 Yossi Kurniawan</h3>
-            <p>@yield('judul_halaman')</p>
+            <h6>@yield('judul')</h6>
         </div>
-        <!-- Grey with black text -->
-        <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+        <nav class="navbar navbar-expand-sm bg-light navbar-light">
             <div class="container-fluid">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="/pegawai">Pegawai</a>
+                        <a class="nav-link active" href="/pegawai">Pegawai</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Nama Tabel PR</a>
+                        <a class="nav-link" href="/teh">Teh</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/siswa">Siswa</a>
+                        <a class="nav-link active" href="/siswa">Siswa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Latihan 1</a>
+                        <a class="nav-link" href="/d4">D4</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Latihan 2</a>
+                        <a class="nav-link" href="/e5">E5</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/blueray">Tugas Pra EAS</a>
+                        <a class="nav-link" href="/eas">EAS</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">EAS</a>
-                    </li>
+
                 </ul>
             </div>
         </nav>
@@ -48,6 +44,7 @@
             @yield('konten')
         </div>
     </div>
+
 </body>
 
 </html>
