@@ -83,3 +83,18 @@ Route::post('/siswa', [SiswaDBController::class, 'store'])->name('siswa.store');
 Route::get('/siswa/{nrp}/edit', [SiswaDBController::class, 'edit'])->name('siswa.edit');
 Route::put('/siswa/{nrp}', [SiswaDBController::class, 'update'])->name('siswa.update');
 Route::delete('/siswa/{nrp}', [SiswaDBController::class, 'destroy'])->name('siswa.destroy');
+
+//e5
+Route::get('e5', [nilaikuliahDBController::class, 'index']);
+Route::get('e5/tambah', [nilaikuliahDBController::class, 'tambah']);
+Route::post('e5/store', [nilaikuliahDBController::class, 'store']);
+Route::get('e5/edit/{id}', [nilaikuliahDBController::class, 'edit']);
+Route::post('e5/update', [nilaikuliahDBController::class, 'update']);
+Route::get('e5/hapus/{id}', [nilaikuliahDBController::class, 'hapus']);
+Route::get('/e5/cari', [nilaikuliahDBController::class, 'cari']);
+
+//d4
+Route::get('d4', [keranjangbelanjaDBController::class, 'index']);
+Route::get('d4/tambah', [keranjangbelanjaDBController::class, 'beli']);
+Route::post('d4/store', [keranjangbelanjaDBController::class, 'store']);
+Route::get('d4/hapus/{id}', [keranjangbelanjaDBController::class, 'hapus']);
