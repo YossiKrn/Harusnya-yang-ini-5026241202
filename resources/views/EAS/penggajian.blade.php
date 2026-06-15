@@ -28,8 +28,10 @@
                 <td>{{ $d->nip }}</td>
                 <td>{{ $d->gajipokok }}</td>
                 <td>{{ $d->potongan }}</td>
-                <td>{{ ($d->gajipokok - $d->potongan) ? $d->gajibersih : '' }}</td>
-                <td>{{ (($d->gajipokok - $d->potongan) / $d->gajipokok * 100) ? $d->persentase_potongan : '' }}%</td>
+                <td>{{ $d->gajipokok - $d->potongan }}</td>
+                <td>
+                    {{ number_format((($d->gajipokok - $d->potongan) / $d->gajipokok) * 100, 2) }} %
+                </td>
             </tr>
         @endforeach
     </table>

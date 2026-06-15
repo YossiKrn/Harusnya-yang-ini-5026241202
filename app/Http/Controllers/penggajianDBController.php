@@ -7,22 +7,21 @@ use Illuminate\Support\Facades\DB;
 
 class penggajianDBController extends Controller
 {
-    //start FUNGSI MENAMPILKAN HALAMAN UTAMA (INDEX)
     public function index()
     {
         $data = DB::table('penggajian')->paginate(10);
         return view('EAS.penggajian', ['data' => $data]);
     }
-    //end FUNGSI MENAMPILKAN HALAMAN UTAMA (INDEX)
 
-    //start FUNGSI MENAMPILKAN FORMULIR TAMBAH DATA
     public function tambah()
     {
-        return view('EAS.tambah');
-    }
-    //end FUNGSI MENAMPILKAN FORMULIR TAMBAH DATA
+    // Mengambil semua isi kolom NIP yang sudah ada di database
+    $nips = DB::table('penggajian')->pluck('nip');
 
-    //start FUNGSI MEMPROSES SIMPAN DATA BARU DAN VALIDASI PRIMARY KEY MANUAL
+    // Melempar data NIP tersebut ke form tambah
+    return view('EAS.tambah', ['nips' => $nips]);
+    }
+
     public function store(Request $request)
     {
         // Proses pengecekan data kembar pada Primary Key manual sebelum di-insert
@@ -42,9 +41,7 @@ class penggajianDBController extends Controller
 
         return redirect('/penggajian')->with('success', 'Data berhasil ditambahkan!');
     }
-    //end FUNGSI MEMPROSES SIMPAN DATA BARU DAN VALIDASI PRIMARY KEY MANUAL
 
-    //start FUNGSI MEMPROSES UPDATE DATA
     public function update(Request $request)
     {
         DB::table('penggajian')->where('nip', $request->nip)->update([
@@ -54,5 +51,4 @@ class penggajianDBController extends Controller
 
         return redirect('/penggajian')->with('success', 'Data berhasil diupdate!');
     }
-    //end FUNGSI MEMPROSES UPDATE DATA
 }
